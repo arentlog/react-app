@@ -1,4 +1,6 @@
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 0;
+  background-color: #1e1e1e;
+  color: white;
+  font-family: 'Consolas';
+  margin: 0px;
 }
