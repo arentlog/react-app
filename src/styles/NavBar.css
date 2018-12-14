@@ -4,3 +4,9 @@
     display: flex;
     justify-content: space-around;
 }
+
+.nav-bar-button {
+    background-color: red!important;
+    font-size: 18px!important;
+    color: white!important;
+}
