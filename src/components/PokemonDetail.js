@@ -9,6 +9,7 @@ export default class PokemonDetail extends React.Component {
     this.state = {
       abilities: [],
       height: 0,
+      weight: 0,
       moves: [],
       name: ''
     }
@@ -18,7 +19,14 @@ export default class PokemonDetail extends React.Component {
     axios.get('http://pokeapi.salestock.net/api/v2/pokemon/' + this.props.id)
       .then(res => {
         const data = res.data;
-        this.setState({ abilities: data.abilities, height: data.height, moves: data.moves, name: data.name });
+        this.setState({
+          abilities: data.abilities,
+          height: data.height,
+          weight: data.weight,
+          moves: data.moves,
+          name: data.name,
+          img: data.sprites.front_default
+        });
     });
   }
   
@@ -32,8 +40,10 @@ export default class PokemonDetail extends React.Component {
     return (
       <>
         <h1>{this.state.name} #{this.props.id}</h1>
+        <img src={this.state.img} alt="poke"></img>
 
         <p>Height: {this.state.height}</p>
+        <p>Weight: {this.state.weight}</p>
 
         <p>Abilities</p>
         <ol>
