@@ -7,11 +7,7 @@ export default class PokemonDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      abilities: [],
-      height: 0,
-      weight: 0,
-      moves: [],
-      name: ''
+      data: null
     }
   }
 
@@ -20,18 +16,13 @@ export default class PokemonDetail extends React.Component {
       .then(res => {
         const data = res.data;
         this.setState({
-          abilities: data.abilities,
-          height: data.height,
-          weight: data.weight,
-          moves: data.moves,
-          name: data.name,
-          img: data.sprites.front_default
+          data: data
         });
     });
   }
   
   render() {
-    if (this.state.name === '') {
+    if (!this.state.data) {
       return (
         <div>Loading Pokemon Data...</div>
       );
@@ -39,20 +30,22 @@ export default class PokemonDetail extends React.Component {
 
     return (
       <>
-        <h1>{this.state.name} #{this.props.id}</h1>
-        <img src={this.state.img} alt="poke"></img>
+        <h1>{this.state.data.name} #{this.props.id}</h1>
+        <img src={this.state.data.sprites.front_default} alt="poke"></img>
 
-        <p>Height: {this.state.height}</p>
-        <p>Weight: {this.state.weight}</p>
+        <p>Type: {this.state.data.types.map(t => <span key={t.slot}>{t.type.name} </span>)}</p>
+
+        <p>Height: {this.state.data.height}</p>
+        <p>Weight: {this.state.data.weight}</p>
 
         <p>Abilities</p>
         <ol>
-          {this.state.abilities.map(p => <li key={p.ability.name}>{p.ability.name}</li>)}
+          {this.state.data.abilities.map(a => <li key={a.ability.name}>{a.ability.name}</li>)}
         </ol>
 
         <p>Moves</p>
         <ol>
-          {this.state.moves.map(p => <li key={p.move.name}>{p.move.name}</li>)}
+          {this.state.data.moves.map(m => <li key={m.move.name}>{m.move.name}</li>)}
         </ol>
       </>
     );
