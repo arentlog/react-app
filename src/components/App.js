@@ -5,6 +5,7 @@ import Home from './Home';
 import Board from './Board';
 import Pokemon from './Pokemon';
 import NavBar from './NavBar';
+import PokemonDetail from './PokemonDetail';
 
 export default class App extends React.Component {
 
@@ -18,7 +19,8 @@ export default class App extends React.Component {
             <Route path='/board' render={() => (
               <Board onClick={i => console.log('Button clicked:', i)}/>
             )}/>
-            <Route path='/pokemon' component={Pokemon}/>
+            <Route exact path='/pokemon' component={Pokemon}/>
+            <Route exact path='/pokemon/:id' component={(props) => <PokemonDetail id={props.match.params.id} />}/>
           </Switch>
         </div>
       </div>
