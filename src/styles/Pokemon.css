@@ -6,3 +6,7 @@
 .pokemon:hover {
   text-decoration: underline;
 }
+
+.progress-div {
+  text-align: center;
+}

@@ -18,6 +18,10 @@ img:hover {
   cursor: pointer;
 }
 
+.progress-div {
+  text-align: center;
+}
+
 .flying {
   color: slateblue;
 }

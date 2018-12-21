@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Pokemon.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { CircularProgress } from '@material-ui/core';
 
 function getPokemonId(url) {
   return url.substring(34, url.length - 1);
@@ -35,7 +36,9 @@ export default class Pokemon extends React.Component {
   render() {
     if (this.state.pokemon.length === 0) {
       return (
-        <div>Loading Pokemon...</div>
+        <div className="progress-div">
+          <CircularProgress />
+        </div>
       );
     }
 

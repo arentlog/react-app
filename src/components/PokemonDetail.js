@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/PokemonDetail.css';
 import axios from 'axios';
-import { Tooltip } from '@material-ui/core';
+import { Tooltip, CircularProgress } from '@material-ui/core';
 
 function toTitleCase(str) {
   return str.replace(
@@ -31,13 +31,15 @@ export default class PokemonDetail extends React.Component {
         this.setState({
           data: data
         });
-        });
+      });
   }
   
   render() {
     if (!this.state.data) {
       return (
-        <div>Loading Pokemon Data...</div>
+        <div className="progress-div">
+          <CircularProgress />
+        </div>
       );
     }
 
