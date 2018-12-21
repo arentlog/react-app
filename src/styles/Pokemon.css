@@ -1,0 +1,8 @@
+.pokemon {
+  text-decoration: none;
+  color: white;
+}
+
+.pokemon:hover {
+  text-decoration: underline;
+}

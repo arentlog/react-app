@@ -1,0 +1,83 @@
+img {
+  background: gray;
+  border: thin solid white;
+  cursor: pointer;
+}
+
+img:hover {
+  border: thin solid yellow;
+}
+
+.ability:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.move:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.flying {
+  color: slateblue;
+}
+
+.fire {
+  color: orangered;
+}
+
+.water {
+  color: blue;
+}
+
+.grass {
+  color: green;
+}
+
+.poison {
+  color: purple;
+}
+
+.electric {
+  color: yellow;
+}
+
+.bug {
+  color: greenyellow;
+}
+
+.rock {
+  color: brown;
+}
+
+.ground {
+  color: burlywood;
+}
+
+.ice {
+  color: lightblue;
+}
+
+.psychic {
+  color: hotpink;
+}
+
+.dragon {
+  color: darkslateblue;
+}
+
+.fighting {
+  color: darkred;
+}
+
+.ghost {
+  color: rebeccapurple;
+}
+
+.steel {
+  color: gray;
+}
+
+.fairy {
+  color: lightpink;
+}

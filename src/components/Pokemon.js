@@ -7,6 +7,15 @@ function getPokemonId(url) {
   return url.substring(34, url.length - 1);
 }
 
+function toTitleCase(str) {
+  return str.replace(
+      /\w\S*/g,
+      function(txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+  );
+}
+
 export default class Pokemon extends React.Component {
   constructor() {
     super();
@@ -24,9 +33,15 @@ export default class Pokemon extends React.Component {
   }
   
   render() {
+    if (this.state.pokemon.length === 0) {
+      return (
+        <div>Loading Pokemon...</div>
+      );
+    }
+
     return (
       <ol>
-        {this.state.pokemon.map(p => <li key={p.url}><Link to={'/pokemon/' + getPokemonId(p.url)} style={{ textDecoration: 'none' }}>{p.name}</Link></li>)}
+        {this.state.pokemon.map(p => <li key={p.url}><Link to={'/pokemon/' + getPokemonId(p.url)} className="pokemon">{toTitleCase(p.name)}</Link></li>)}
       </ol>
     );
   }
