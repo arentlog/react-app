@@ -1,3 +1,15 @@
+.pokemon-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.pokemon-div {
+  border: thin solid black;
+  margin: 5px;
+  text-align: center;
+}
+
 .pokemon {
   text-decoration: none;
   color: white;
