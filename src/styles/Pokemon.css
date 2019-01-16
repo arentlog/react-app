@@ -5,9 +5,9 @@
 }
 
 .pokemon-div {
-  border: thin solid black;
   margin: 5px;
   text-align: center;
+  display: grid;
 }
 
 .pokemon {
@@ -19,6 +19,15 @@
   text-decoration: underline;
 }
 
+.pokemon-name {
+  width: 100%;
+}
+
 .progress-div {
   text-align: center;
+}
+
+.pokemon-image {
+  width: 70%;
+  background: lightblue;
 }

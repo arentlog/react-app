@@ -1,10 +1,10 @@
-img {
+.pokemon-detail-image {
   background: gray;
   border: thin solid white;
   cursor: pointer;
 }
 
-img:hover {
+.pokemon-detail-image:hover {
   border: thin solid yellow;
 }
 

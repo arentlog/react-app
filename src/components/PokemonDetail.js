@@ -47,7 +47,7 @@ export default class PokemonDetail extends React.Component {
       <>
         <h1>{toTitleCase(this.state.data.name)} #{this.props.id}</h1>
         <Tooltip title="See on Bulbapedia" placement="right">
-          <img src={this.state.data.sprites.front_default} alt="poke" onClick={() => openInNewTab('https://bulbapedia.bulbagarden.net/wiki/'+ toTitleCase(this.state.data.name) + '_(Pokémon)')}></img>
+          <img src={this.state.data.sprites.front_default} alt="poke" className="pokemon-detail-image" onClick={() => openInNewTab('https://bulbapedia.bulbagarden.net/wiki/'+ toTitleCase(this.state.data.name) + '_(Pokémon)')}></img>
         </Tooltip>
 
         <p>Type: {this.state.data.types.map(t => <span key={t.slot} className={t.type.name}>{t.type.name} </span>)}</p>
